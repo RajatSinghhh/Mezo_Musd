@@ -11,7 +11,7 @@ This document catalogs key vulnerabilities identified in the audit of the protoc
 | 1  | Borrowing Fee Bypass via Low `minNetDebt`                             | Medium               | [Report 1](./Borrow_Fee_Bypass.md)      |
 | 2  | Compiler Version Should Be Pinned                                     | Low                  | [Report 2](./Compiler_Version_Should_Be_Pinned.md)  |
 | 3  | `withdrawColl()` Enables Dust Withdrawals Causing Gas Griefing        | Medium                 | [Report 3](./Gas_Griefing_Via_Tiny_Collatral.md) |
-| 4  | Risk of Initialization Attack Due to Delayed `initialize()` Call      | High                 | [Report](./Initialization_Attack_Due_To_Delayed_Call.md)  |
+| 4  | Risk of Initialization Attack Due to Delayed `initialize()` Call      | High                 | [Report 4](./Initialization_Attack_Due_To_Delayed_Call.md)  |
 | 5  | Internal Function Naming Convention Violations in `checkContract.sol` | Informational        | [Report 5](./Internal_Function_Naming_Convention.md)         |
 
 > <sup>†</sup> *Severity levels are preliminary; see individual reports for final impact scoring.*
@@ -49,12 +49,12 @@ This document catalogs key vulnerabilities identified in the audit of the protoc
 
 ```
 .
-├── finding-1-borrowing-fee-bypass.md
-├── finding-2-compiler-version-pinning.md
-├── finding-3-withdrawcoll-gas-griefing.md
-├── finding-4-delayed-initialize-attack.md
-├── finding-5-naming-convention.md
-├── finding-6-unprotected-initialize.md
+├── Borrow_Fee_Bypass.md
+├──Compiler_Version_Should_Be_Pinned.md
+├──Gas_Griefing_Via_Tiny_Collatral.md
+├──Initialization_Attack_Due_To_Delayed_Call.md
+├──Internal_Function_Naming_Convention.md
+
 └── README.md   ← (you are here)
 ```
 
