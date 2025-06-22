@@ -58,10 +58,8 @@ This document catalogs key vulnerabilities identified in the audit of the protoc
 └── README.md   ← (you are here)
 ```
 
-### ✍️ Contributing
+### ✍️ Contributing
 
-If additional vulnerabilities or architectural flaws are identified, please consider submitting them securely or via pull request.
+If you identify additional vulnerabilities or improvements, please open an issue or submit a pull request. Security disclosures can be sent directly to *[rajatsingh321001@gmail.com]*.
 
 ---
-
-© <?= date('Y') ?> <?= $ownerName ?? "AuditDrop" ?> – All rights reserved.
