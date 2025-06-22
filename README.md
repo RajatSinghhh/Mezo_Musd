@@ -8,12 +8,11 @@ This document catalogs key vulnerabilities identified in the audit of the protoc
 
 | ID | Finding Title                                                         | Severity<sup>†</sup> | Link                                                 |
 | -- | --------------------------------------------------------------------- | -------------------- | ---------------------------------------------------- |
-| 1  | Borrowing Fee Bypass via Low `minNetDebt`                             | Medium               | [Report 1](./finding-1-borrowing-fee-bypass.md)      |
-| 2  | Compiler Version Should Be Pinned                                     | Low                  | [Report 2](./finding-2-compiler-version-pinning.md)  |
-| 3  | `withdrawColl()` Enables Dust Withdrawals Causing Gas Griefing        | High                 | [Report 3](./finding-3-withdrawcoll-gas-griefing.md) |
-| 4  | Risk of Initialization Attack Due to Delayed `initialize()` Call      | High                 | [Report 4](./finding-4-delayed-initialize-attack.md) |
-| 5  | Internal Function Naming Convention Violations in `checkContract.sol` | Informational        | [Report 5](./finding-5-naming-convention.md)         |
-| 6  | Unprotected `initialize()` Function Vulnerable to Re-initialization   | High                 | [Report 6](./finding-6-unprotected-initialize.md)    |
+| 1  | Borrowing Fee Bypass via Low `minNetDebt`                             | Medium               | [Report 1](./Borrow_Fee_Bypass.md)      |
+| 2  | Compiler Version Should Be Pinned                                     | Low                  | [Report 2](./Compiler_Version_Should_Be_Pinned.md)  |
+| 3  | `withdrawColl()` Enables Dust Withdrawals Causing Gas Griefing        | Medium                 | [Report 3](./Gas_Griefing_Via_Tiny_Collatral.md) |
+| 4  | Risk of Initialization Attack Due to Delayed `initialize()` Call      | High                 | [Report](./Initialization_Attack_Due_To_Delayed_Call.md)  |
+| 5  | Internal Function Naming Convention Violations in `checkContract.sol` | Informational        | [Report 5](./Internal_Function_Naming_Convention.md)         |
 
 > <sup>†</sup> *Severity levels are preliminary; see individual reports for final impact scoring.*
 
@@ -22,32 +21,27 @@ This document catalogs key vulnerabilities identified in the audit of the protoc
 ## 1 Borrowing Fee Bypass via Low `minNetDebt`
 
 * **Summary:** By manipulating `minNetDebt`, users can trigger borrowing operations with negligible debt, avoiding meaningful fee deductions.
-* 👉 [Full report](./finding-1-borrowing-fee-bypass.md)
+* 👉 [Full report](./Borrow_Fee_Bypass.md)
 
 ## 2 Compiler Version Should Be Pinned
 
 * **Summary:** Floating compiler versions may introduce inconsistencies or unexpected behaviors across environments.
-* 👉 [Full report](./finding-2-compiler-version-pinning.md)
+* 👉 [Full report](./Compiler_Version_Should_Be_Pinned.md)
 
 ## 3 `withdrawColl()` Enables Dust Withdrawals Causing Gas Griefing
 
 * **Summary:** Near-zero collateral withdrawals repeatedly reinsert Troves into the sorted list, degrading performance and opening doors to gas griefing.
-* 👉 [Full report](./finding-3-withdrawcoll-gas-griefing.md)
+* 👉 [Full report](./Gas_Griefing_Via_Tiny_Collatral.md)
 
 ## 4 Risk of Initialization Attack Due to Delayed `initialize()` Call
 
 * **Summary:** Contracts that delay calling `initialize()` are vulnerable to front-running or unauthorized configuration.
-* 👉 [Full report](./finding-4-delayed-initialize-attack.md)
+* 👉 [Full report](./Initialization_Attack_Due_To_Delayed_Call.md)
 
 ## 5 Internal Function Naming Convention Violations in `checkContract.sol`
 
 * **Summary:** Best practices recommend prefixing internal/private functions with an underscore to improve code clarity and maintainability.
-* 👉 [Full report](./finding-5-naming-convention.md)
-
-## 6 Unprotected `initialize()` Function Vulnerable to Re-initialization
-
-* **Summary:** Lack of access control on `initialize()` allows anyone to reconfigure the contract after deployment.
-* 👉 [Full report](./finding-6-unprotected-initialize.md)
+* 👉 [Full report](./Internal_Function_Naming_Convention.md)
 
 ---
 
